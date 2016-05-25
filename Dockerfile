@@ -1,14 +1,13 @@
 FROM ubuntu:trusty
 
 # install mono
-# http://www.mono-project.com/docs/getting-started/install/linux/#debian-ubuntu-and-derivatives
+# http://www.mono-project.com/docs/getting-started/install/linux/#debian-ubuntu-and-derivatives-beta-channel
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
-    && echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/sources.list.d/mono-xamarin.list \
+    && echo "deb http://download.mono-project.com/repo/debian beta main" > /etc/apt/sources.list.d/mono-xamarin-beta.list \
     && apt-get -qq update \
     && apt-get -qqy install mono-devel
     
-
 # install dotnet
 # https://www.microsoft.com/net/core#ubuntu
 # apt-transport-https is required
